@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');   // for checking the database weather it is a valid user
 const jwt = require('jsonwebtoken');
 
-const { JWT_SECRET_KEY } = require('../config');   // from confi.js file // for decryption of token
+require('dotenv').config();
+
+const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY 
+
 
 const UserModel = mongoose.model('UserModel');   // schema
 
