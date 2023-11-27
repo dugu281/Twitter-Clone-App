@@ -2,16 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');   // importing mongoose
 const app = express();
-const { MONGO_DB_URL } = require('./config');   // from config.js file
+
 
 const PORT = 8080;          // listening on port number 8080
 
+const DB = process.env.MONGO_DB_URL            // database to connect to
 
 // add global variable to get or path
 global.__basedir = __dirname;            // __basedir - will hold the path of the base(backend) folder 
 
 // connecting to MONGODB database
-mongoose.connect(MONGO_DB_URL);  // connect to database
+mongoose.connect(DB);  // connect to database
 
 // checking connection
 mongoose.connection.on('connected', () => {
