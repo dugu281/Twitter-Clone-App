@@ -5,7 +5,9 @@ const UserModel = mongoose.model('UserModel');
 const bcryptjs = require("bcryptjs");             // for password encryption and decryption (hash and compare)
 const jwt = require('jsonwebtoken');        // for token based authentication (jwt token authentication)
 
-const { JWT_SECRET_KEY } = require('../config');   // from confi.js file
+require('dotenv').config();
+
+const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY 
 
 
 // Signup API or route
