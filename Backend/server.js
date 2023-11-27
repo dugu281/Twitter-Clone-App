@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');   // importing mongoose
 const app = express();
 
+require('dotenv').config();
 
 const PORT = 8080;          // listening on port number 8080
 
